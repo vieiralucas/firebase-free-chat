@@ -10,15 +10,6 @@ freeChat.config(['$routeProvider', function($routeProvider) {
 }
 ]);
 
-freeChat.controller('NavController', ['$scope', '$location', function($scope, $location) {
-	$scope.isHomeActive = function() {
-		if($location.path() === '/home') {
-			return true;
-		}
-		return false;
-	}
-}]);
-
 freeChat.controller('HomeController', ['$scope', '$firebase', '$location', function($scope, $firebase, $location){
 	console.log($location);
 	$scope.submitNewRoom = function() {
@@ -31,7 +22,7 @@ freeChat.controller('HomeController', ['$scope', '$firebase', '$location', funct
 
 freeChat.controller('ChatRoomController', ['$scope', '$firebase', '$routeParams', function($scope, $firebase, $routeParams){
 	var firebase = new Firebase("https://vieiralucas-freechat.firebaseio.com/" + $routeParams.chatRoom);
-	$scope.color = "trolow";
+	$scope.color = "#000";
 	$scope.messages = [];
 	firebase.on('child_added', function(content) {
 		if(content.val().body) {
