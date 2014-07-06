@@ -1,0 +1,9 @@
+{
+  "firebase": "vieiralucas-freechat",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    ".*",
+    "**/node_modules/**"
+  ]
+}
